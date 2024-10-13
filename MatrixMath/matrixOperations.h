@@ -1,14 +1,10 @@
-#ifndef SIZE
-#define SIZE 5
-#endif
-
 #ifndef MatrixMath_H
 #define MatrixMath_H
 
-void AddMatrices(int m1[SIZE][SIZE], int m2[SIZE][SIZE], int* storeResult);
-void MultiplyMatrices(int m1[SIZE][SIZE], int m2[SIZE][SIZE], int* storeResult);
-void TransposeMatrix(int m1[SIZE][SIZE], int* storeResult);
-void PrintMatrix(int matrix[SIZE][SIZE]);
+int AddMatrices(int m1Rows, int m1Col, int m2Rows, int m2Col, int m1[m1Rows][m1Col], int m2[m2Rows][m2Col], int* storeResult);
+int MultiplyMatrices(int m1Rows, int m1Col, int m2Rows, int m2Col, int m1[m1Rows][m1Col], int m2[m2Rows][m2Col], int* storeResult);
+int TransposeMatrix(int rows, int col, int matrix[rows][col], int* storeResult);
+void PrintMatrix(int rows, int col, int matrix[rows][col]);
 
 #endif // !MatrixMath
 

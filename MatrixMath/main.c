@@ -23,44 +23,64 @@ int main() {
 	};
 
 	{
-		// Code blocks make int result local.
-		printf("The two matrices on the instructions added are:\n\n");
-
+		// Code blocks make int result and success local.
 		int result[SIZE][SIZE];
-		AddMatrices(m1, m2, result[0]);
-		PrintMatrix(result);
+		int success = AddMatrices(SIZE, SIZE, SIZE, SIZE, m1, m2, result[0]);
+		if (success) {
+			printf("The two matrices on the instructions added are:\n\n");
+			PrintMatrix(SIZE, SIZE, result);
+		}
+		else {
+			printf("m1 and m2 cannot be added.");
+		}
 	}
 	
 	{
-		printf("\n\nm1 * m2 is:\n\n");
-
 		int result[SIZE][SIZE];
-		MultiplyMatrices(m1, m2, result[0]);
-		PrintMatrix(result);
+		int success = MultiplyMatrices(SIZE, SIZE, SIZE, SIZE, m1, m2, result[0]);
+		if (success) {
+			printf("\n\nm1 * m2 is:\n\n");
+			PrintMatrix(SIZE, SIZE, result);
+		}
+		else {
+			printf("m1 and m2 cannot be multiplied in that order.");
+		}
 	}
 
 	{
-		printf("\n\nm2 * m1 is:\n\n");
-
 		int result[SIZE][SIZE];
-		MultiplyMatrices(m2, m1, result[0]);
-		PrintMatrix(result);
+		int success = MultiplyMatrices(SIZE, SIZE, SIZE, SIZE, m2, m1, result[0]);
+		if (success) {
+			printf("\n\nm2 * m1 is:\n\n");
+			PrintMatrix(SIZE, SIZE, result);
+		}
+		else {
+			printf("m2 and m1 cannot be multiplied in that order.");
+		}
 	}
 
 	{
-		printf("\n\nThe first matrix transposed is:\n\n");
-
 		int result[SIZE][SIZE];
-		TransposeMatrix(m1, result[0]);
-		PrintMatrix(result);
+		int success = TransposeMatrix(SIZE, SIZE, m1, result[0]);
+		if (success) {
+			printf("\n\nThe first matrix transposed is:\n\n");
+			PrintMatrix(SIZE, SIZE, result);
+		}
+		else {
+			printf("m1 cannot be transposed.");
+		}
 	}
 
 	{
-		printf("\n\nThe second matrix transposed is:\n\n");
-
 		int result[SIZE][SIZE];
-		TransposeMatrix(m2, result[0]);
-		PrintMatrix(result);
+		int success = TransposeMatrix(SIZE, SIZE, m2, result[0]);
+		if (success) {
+			printf("\n\nThe second matrix transposed is:\n\n");
+			PrintMatrix(SIZE, SIZE, result);
+		}
+		else {
+			printf("m2 cannot be transposed.");
+		}
 	}
 
 	return 1;

@@ -1,3 +1,4 @@
 *.o
 *.gch
 /SalesReport/.vs
+/MatrixMath/.vs
